@@ -1,0 +1,253 @@
+/* Configurações Globais e Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --cor-primaria: #2e7d32; /* Verde Agro */
+    --cor-secundaria: #81c784; /* Verde Claro */
+    --cor-escura: #1b5e20;
+    --cor-fundo: #f4f9f4;
+    --texto: #333;
+    --branco: #ffffff;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header e Menu */
+header {
+    background-color: var(--branco);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo h2 {
+    color: var(--cor-primaria);
+    font-weight: 700;
+}
+
+.logo span {
+    color: #f57c00; /* Toque de laranja para destacar */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--cor-primaria);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--cor-primaria);
+    margin: 2px 0;
+    transition: 0.3s;
+}
+
+/* Seção Hero */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--branco);
+    padding-top: 60px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.btn-principal {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--branco);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-principal:hover {
+    background-color: var(--cor-escura);
+}
+
+/* Seção Pilares */
+.pilares-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.titulo-secao {
+    font-size: 2.5rem;
+    color: var(--cor-escura);
+}
+
+.subtitulo-secao {
+    margin-bottom: 50px;
+    color: #666;
+}
+
+.grid-pilares {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--branco);
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--cor-primaria);
+}
+
+/* Seção Simulador */
+.simulador-section {
+    background-color: #e8f5e9;
+    padding: 80px 0;
+}
+
+.simulador-box {
+    background-color: var(--branco);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.simulador-box h2 {
+    color: var(--cor-escura);
+    margin-bottom: 10px;
+}
+
+.opcoes-simulador {
+    text-align: left;
+    margin: 30px 0;
+}
+
+.checkbox-container {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.checkbox-container input {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+#resultado {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+}
+
+.resultado-escondido {
+    display: none;
+}
+
+.resultado-visivel {
+    display: block;
+    background-color: #c8e6c9;
+    border: 1px solid var(--cor-primaria);
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-escura);
+    color: var(--branco);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+
+/* Responsividade (Telas de Celular) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Em sistemas reais, um script abriria o menu */
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
